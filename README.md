@@ -51,4 +51,4 @@ Open a pull request.
 Please make sure to update tests as appropriate.
 
 
-See the website on this link : 
+See the website on this link :  https://ocece77.github.io/cv_creation_app/

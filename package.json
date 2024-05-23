@@ -1,7 +1,7 @@
 {
-  "homepage": "https://ocece77.github.io/cv_creation_app/",
   "name": "cv_application_app",
   "private": true,
+  "homepage": "https://ocece77.github.io/cv_creation_app",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

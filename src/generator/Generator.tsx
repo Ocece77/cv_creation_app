@@ -26,25 +26,25 @@ function Generator(){
 
   {/*add Experience */}
   interface Experience {
-    expTitle: string,
+    name: string,
     date: string,
     description: string
   }
 
   const [exps , setExps]  = useState<Experience[]>([])
-  const [newExp , setNewExp] = useState<Experience>({ expTitle: "", date: "", description: "" })
+  const [newExp , setNewExp] = useState<Experience>({ name: "", date: "", description: "" })
 
 const addExp = (e : any) =>{
   e.preventDefault();
     const form = e.target as HTMLFormElement;
     const newExperience = {
-      expTitle: form.expTitle.value.toLowerCase(),
+      name: form.expTitle.value.toLowerCase(),
       date: form.date.value,
       description: form.description.value.toLowerCase(),
     };
 
     setExps([...exps, newExperience]);
-    setNewExp({ expTitle: "", date: "", description: "" });
+    setNewExp({ name: "", date: "", description: "" });
     setRemainingChar(150)
     form.reset();
    }
@@ -208,7 +208,7 @@ const removeLanguages = (el : string) =>{
                           <Form.Group  controlId="formJob">
 
                           <Form.Label>Title</Form.Label>
-                            <Form.Control type="text" name="title"  required/>
+                            <Form.Control type="text" name="name"  required/>
                               
                             <Form.Label>Date</Form.Label>
                             <Form.Control type="date" name="date" required/>

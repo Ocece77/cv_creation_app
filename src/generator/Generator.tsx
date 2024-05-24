@@ -463,7 +463,7 @@ const removeLanguages = (el : string) =>{
 
           <Col lg={5} md={5} >
           <p style={{color : `${bgcolor}`}} className="fs-2 fw-bolder ">
-          <FontAwesomeIcon icon={faGlobe} style={{color: `${bgcolor}`}}  className="me-3"/>
+          <FontAwesomeIcon icon={faGlobe} style={{color: `${bgcolor}`}}  className="me-1"/>
             Languages</p>
                 <Col  lg={12}>
                     <ul className="row row-cols-1 w-100 ">

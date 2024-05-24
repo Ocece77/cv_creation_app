@@ -201,7 +201,7 @@ const removeLanguages = (el : string) =>{
                        { exps.map((experience , index)=>(
                        <InputGroup key={index} className="mb-3"> 
                               <Button variant="dark" className="bg-danger" onClick={() => removeExp(index)}>Remove</Button> 
-                              <Form.Control readOnly type='text' value={ `${experience["expTitle"].length > 20? experience["expTitle"].slice(0,15).padEnd(18,"."): experience["expTitle"]} `} aria-label="New skills"/> 
+                              <Form.Control readOnly type='text' value={ `${experience["name"].length > 20? experience["name"].slice(0,15).padEnd(18,"."): experience["name"]} `} aria-label="New skills"/> 
                         </InputGroup>
                           ))}
                        <Form onSubmit={addExp} >
@@ -439,7 +439,7 @@ const removeLanguages = (el : string) =>{
             Work experience</h4>
              <ul>
               { exps.map((experience , index)=>(
-              <Work id={index} title={experience["expTitle"]}  date={experience["date"]} description={experience["description"]} />
+              <Work id={index} title={experience["name"]}  date={experience["date"]} description={experience["description"]} />
               ))
             }
              </ul>

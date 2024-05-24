@@ -1,0 +1,16 @@
+
+
+@keyframes fadeAnimation {
+  0%{
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+
+  100%{
+   opacity: 1;
+  }
+}
+
+.fade-animation{
+  animation:fadeAnimation 1s ease-out ;
+}

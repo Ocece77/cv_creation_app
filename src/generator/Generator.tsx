@@ -26,25 +26,25 @@ function Generator(){
 
   {/*add Experience */}
   interface Experience {
-    title: string;
-    date: string; 
-    description: string;
+    expTitle: string,
+    date: string,
+    description: string
   }
 
   const [exps , setExps]  = useState<Experience[]>([])
-  const [newExp , setNewExp] = useState<Experience>({ title: "", date: "", description: "" })
+  const [newExp , setNewExp] = useState<Experience>({ expTitle: "", date: "", description: "" })
 
 const addExp = (e : any) =>{
   e.preventDefault();
     const form = e.target as HTMLFormElement;
     const newExperience = {
-      title: form.title.value.toLowerCase(),
+      expTitle: form.expTitle.value.toLowerCase(),
       date: form.date.value,
       description: form.description.value.toLowerCase(),
     };
 
     setExps([...exps, newExperience]);
-    setNewExp({ title: "", date: "", description: "" });
+    setNewExp({ expTitle: "", date: "", description: "" });
     setRemainingChar(150)
     form.reset();
    }
@@ -65,9 +65,9 @@ const showRemainingCharacter =  (e:any) =>{
 
 {/*add Major */}
 interface Major {
-  majorName: string;
-  date: string; 
-  majorInstitution: string;
+  majorName: string,
+  date: string,
+  majorInstitution: string
 }
 
 const [majors , setMajors]  = useState<Major[]>([])
@@ -201,14 +201,14 @@ const removeLanguages = (el : string) =>{
                        { exps.map((experience , index)=>(
                        <InputGroup key={index} className="mb-3"> 
                               <Button variant="dark" className="bg-danger" onClick={() => removeExp(index)}>Remove</Button> 
-                              <Form.Control readOnly type='text' value={ `${experience["title"].length > 20? experience["title"].slice(0,15).padEnd(18,"."): experience["title"]} `} aria-label="New skills"/> 
+                              <Form.Control readOnly type='text' value={ `${experience["expTitle"].length > 20? experience["expTitle"].slice(0,15).padEnd(18,"."): experience["expTitle"]} `} aria-label="New skills"/> 
                         </InputGroup>
                           ))}
                        <Form onSubmit={addExp} >
                           <Form.Group  controlId="formJob">
 
                           <Form.Label>Title</Form.Label>
-                            <Form.Control type="text" name="title" required/>
+                            <Form.Control type="text" name="title"  required/>
                               
                             <Form.Label>Date</Form.Label>
                             <Form.Control type="date" name="date" required/>
@@ -439,7 +439,7 @@ const removeLanguages = (el : string) =>{
             Work experience</h4>
              <ul>
               { exps.map((experience , index)=>(
-              <Work id={index} title={experience["title"]}  date={experience["date"]} description={experience["description"]} />
+              <Work id={index} title={experience["expTitle"]}  date={experience["date"]} description={experience["description"]} />
               ))
             }
              </ul>

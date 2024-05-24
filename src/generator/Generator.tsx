@@ -439,7 +439,7 @@ const removeLanguages = (el : string) =>{
             Work experience</h4>
              <ul>
               { exps.map((experience , index)=>(
-              <Work id={index} title={experience["name"]}  date={experience["date"]} description={experience["description"]} />
+              <Work id={index} name={experience["name"]}  date={experience["date"]} description={experience["description"]} />
               ))
             }
              </ul>
